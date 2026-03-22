@@ -1,0 +1,113 @@
+<!--
+Gruppnummer: 19
+Gruppmedlemmar: Shoajb Ahmadi, Ali Hussein
+Lärspel: WeatherLab – Meteorolog Assistent
+-->
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Titel som visas i webbläsarens flik -->
+    <title>WeatherLab</title>
+
+    <!-- Kopplar in CSS för design och layout -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- STARTMENY -->
+<div id="menu">
+
+    <!-- Spelets titel -->
+    <h1>WeatherLab</h1>
+
+    <!-- Kort beskrivning av spelet -->
+    <p>Du arbetar som meteorolog-assistent.</p>
+    <p>Analysera temperatur, vind och moln för att göra rätt prognos.</p>
+
+    <!-- Visuella väderikoner -->
+    <div class="hero-icons">
+        <img src="images/sun.png" alt="Sol">
+        <img src="images/rain.png" alt="Regn">
+        <img src="images/storm.png" alt="Storm">
+        <img src="images/cloud.png" alt="Moln">
+    </div>
+
+    <!-- Startknapp som startar spelet via JavaScript -->
+    <button onclick="startGame()">Starta spelet</button>
+
+    <!-- Instruktioner så spelaren förstår hur spelet fungerar -->
+    <h3>Instruktioner</h3>
+    <p>
+        1. Läs väderinformationen<br>
+        2. Titta på bilden och värdena<br>
+        3. Välj vilket väder som kommer uppstå<br>
+        4. Få poäng för rätt prognos
+    </p>
+</div>
+
+
+<!-- SPELVY (gömd i början) -->
+<div id="game" class="hidden">
+
+    <!-- Visar vilken nivå spelaren är på -->
+    <h2 id="levelText"></h2>
+
+    <!-- Bild som visar aktuellt väder -->
+    <div class="forecast-image-box">
+        <img id="weatherVisual" src="images/cloud.png" alt="Väderbild">
+    </div>
+
+    <!-- Här visas väderdata (temperatur, vind, moln) -->
+    <div class="weatherBox">
+        <p id="temp"></p>
+        <p id="wind"></p>
+        <p id="cloud"></p>
+    </div>
+
+    <!-- Fråga till spelaren -->
+    <h3>Vilket väder blir det?</h3>
+
+    <!-- Svarsalternativ som anropar JavaScript-funktion -->
+    <div class="answer-grid">
+        <button onclick="checkAnswer('sun')">Soligt</button>
+        <button onclick="checkAnswer('rain')">Regn</button>
+        <button onclick="checkAnswer('storm')">Storm</button>
+        <button onclick="checkAnswer('cloudy')">Molnigt</button>
+    </div>
+
+    <!-- Här visas feedback (rätt/fel) -->
+    <p id="feedback"></p>
+
+    <!-- Knapp för att gå till nästa nivå (visas efter svar) -->
+    <button id="nextBtn" onclick="nextLevel()" class="hidden">Nästa nivå</button>
+</div>
+
+
+<!-- SLUTSKÄRM -->
+<div id="endScreen" class="hidden">
+
+    <!-- Meddelande när spelet är klart -->
+    <h2>Spelet är slut!</h2>
+
+    <!-- Små dekorativa bilder -->
+    <div class="end-icons">
+        <img src="images/sun.png" alt="Sol">
+        <img src="images/rain.png" alt="Regn">
+    </div>
+
+    <!-- Visar spelarens poäng -->
+    <p id="scoreText"></p>
+
+    <!-- Starta om spelet utan att ladda om sidan -->
+    <button onclick="restartGame()">Spela igen</button>
+</div>
+
+
+<!-- Kopplar in JavaScript som innehåller spellogiken -->
+<script src="script.js"></script>
+
+</body>
+</html>

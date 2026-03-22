@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Min Frågesport</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Välkommen till min frågesport!</h1>
+
+    <div id="quiz-container">
+        <div class="question" id="q1">
+            <p>1. Vilket år grundades HTML?</p>
+            <button class="answer">1989</button>
+            <button class="answer">1993</button>
+            <button class="answer">2000</button>
+        </div>
+
+        <div class="question" id="q2">
+            <p>2. Vad står CSS för?</p>
+            <button class="answer">Computer Style Sheets</button>
+            <button class="answer">Cascading Style Sheets</button>
+            <button class="answer">Creative Style Syntax</button>
+        </div>
+
+        <div class="question" id="q3">
+            <p>3. Vilket språk används för att göra webbsidor interaktiva?</p>
+            <button class="answer">HTML</button>
+            <button class="answer">JavaScript</button>
+            <button class="answer">CSS</button>
+        </div>
+    </div>
+
+    <p id="feedback"></p>
+    <button id="restart">Starta om frågesporten</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
